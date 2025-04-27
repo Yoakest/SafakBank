@@ -1,42 +1,44 @@
 
 # SafakBank
-Bu proje bir banka uygulaması olacak.
-Alpha 1.0'da yapacağım özellikler;
-	- Hesaplar ve özellikleri
-	- Kartlar ve özellikleri
-Kullanıcıların;
-	- Vadesiz Hesap açma
-	- Vadeli Hesap açma
-	- Yatırm Hesabı açma (Altın, Dolar, Euro, ...)
-	- Canlı döviz kurları
-	- Banka kartı alma
-	- Kredi kartı alma
-	- Hesap işlemleri yapma
-	- Banka kartı işlemleri yapma
-	- Kredi kartı işlemleri yapma
-	- Atm uygulaması ile ATM işlemleri yapma
-	- Banka uygulaması ile işlemleri yapma
-	- Online alışveriş işlemleri yapma
-	- POS işlemleri yapma
-	- Bildirim sistemi
+*Bu proje bir banka uygulamasÄ± olacak.*
 
-Alpha 2.0'da yapacağım özellikler;
-	- Kullanıcılar için bir web uygulaması
+**Alpha 1.0'da yapacaÄŸÄ±m Ã¶zellikler;**
+- Hesaplar ve Ã¶zellikleri
+- Kartlar ve Ã¶zellikleri
 
-Alpha 3.0'da yapacağım özellikler;
-	- Banka çalışanları için bir uygulama
-	- Banka çalışanları şube işlemlerini gerçekleştirecek
-	- Müşteri onayı alacaklar
-	- Banka çalışanları müşteri onayı olmadan müşteri bilgilerini göremeyecekler
+*KullanÄ±cÄ±larÄ±n;*
+- Vadesiz Hesap aÃ§ma
+- Vadeli Hesap aÃ§ma
+- YatÄ±rm HesabÄ± aÃ§ma (AltÄ±n, Dolar, Euro, ...)
+- CanlÄ± dÃ¶viz kurlarÄ±
+- Banka kartÄ± alma
+- Kredi kartÄ± alma
+- Hesap iÅŸlemleri yapma
+- Banka kartÄ± iÅŸlemleri yapma
+- Kredi kartÄ± iÅŸlemleri yapma
+- Atm uygulamasÄ± ile ATM iÅŸlemleri yapma
+- Banka uygulamasÄ± ile iÅŸlemleri yapma
+- Online alÄ±ÅŸveriÅŸ iÅŸlemleri yapma
+- POS iÅŸlemleri yapma
+- Bildirim sistemi
 
-Alpha 4.0'da yapacağım özellikler;
-	- Banka çalışanları için bir windows uygulaması
+**Alpha 2.0'da yapacaÄŸÄ±m Ã¶zellikler;**
+- KullanÄ±cÄ±lar iÃ§in bir web uygulamasÄ±
 
-Uygulma için şuan kullanmayı planladığım teknolojiler;
-	- Database: SQL Server
-	- Backend: ASP.NET Core Web API, Entity Framework Core, FluentValidation, ASP.NET Identity, JWT, AutoMapper, MediatR
-	- Logging: Serilog
-	- Testing: xUnit
-	- Web: ASP.NET Core MVC
-	- Desktop: WPF
-	- Mobile: .NET MAUI
+**Alpha 3.0'da yapacaÄŸÄ±m Ã¶zellikler;**
+- Banka Ã§alÄ±ÅŸanlarÄ± iÃ§in bir uygulama
+- Banka Ã§alÄ±ÅŸanlarÄ± ÅŸube iÅŸlemlerini gerÃ§ekleÅŸtirecek
+- MÃ¼ÅŸteri onayÄ± alacaklar
+- Banka Ã§alÄ±ÅŸanlarÄ± mÃ¼ÅŸteri onayÄ± olmadan mÃ¼ÅŸteri bilgilerini gÃ¶remeyecekler
+
+**Alpha 4.0'da yapacaÄŸÄ±m Ã¶zellikler;**
+- Banka Ã§alÄ±ÅŸanlarÄ± iÃ§in bir windows uygulamasÄ±
+
+**Uygulma iÃ§in ÅŸuan kullanmayÄ± planladÄ±ÄŸÄ±m teknolojiler;**
+- Database: SQL Server
+- Backend: ASP.NET Core Web API, Entity Framework Core, FluentValidation, ASP.NET Identity, JWT, AutoMapper, MediatR
+- Logging: Serilog
+- Testing: xUnit
+- Web: ASP.NET Core MVC
+- Desktop: WPF
+- Mobile: .NET MAUI
