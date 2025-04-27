@@ -1,0 +1,6 @@
+@SafakBankAPI_HostAddress = http://localhost:5290
+
+GET {{SafakBankAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
