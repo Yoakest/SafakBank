@@ -14,12 +14,30 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Ensure database is created
-using (var scope = app.Services.CreateScope())
+// Veritabaný ve model oluþturma iþlemi için gerekli kodlar
+while (true)
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    dbContext.Database.EnsureDeleted(); // Veritabanýný siler
-    dbContext.Database.EnsureCreated(); // Veritabaný yoksa oluþturur
+    Console.WriteLine("Veritabaný ve model oluþturmak istiyor musunuz (y/N)");
+    string? test = Console.ReadLine();
+    if (test == "y" || test == "Y")
+    {
+        using (var scope = app.Services.CreateScope())
+        {
+            var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            dbContext.Database.EnsureDeleted(); // Veritabanýný siler
+            dbContext.Database.EnsureCreated(); // Veritabaný yoksa oluþturur
+        }
+        break; // Exit the loop if the database is created
+    }
+    else if (test == "" || test == "n" || test == "N")
+    {
+        Console.WriteLine("Veritabaný ve model oluþturulmadý.");
+        break; // Exit the loop if the user chooses not to create the database
+    }
+    else
+    {
+        Console.WriteLine("Geçersiz giriþ. Lütfen 'y' veya 'n' girin.");
+    }
 }
 
 // Configure the HTTP request pipeline.

@@ -18,5 +18,8 @@ namespace SafakBankApi.Models
         public int? Salary { get; set; }
         public string? EducationLevel { get; set; }
         public bool IsActive { get; set; } = true;
+
+        // Bir kullanýcý birden fazla vadesiz hesaba sahip olabilir
+        public ICollection<CheckingAccount> CheckingAccounts { get; set; } = new List<CheckingAccount>();
     }
 }
