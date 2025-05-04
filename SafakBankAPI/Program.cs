@@ -12,31 +12,40 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// CORS ayarlarÄ±
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder => builder.AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader());
+});
+
 var app = builder.Build();
 
-// Veritabaný ve model oluþturma iþlemi için gerekli kodlar
+// Veritabanï¿½ ve model oluï¿½turma iï¿½lemi iï¿½in gerekli kodlar
 while (true)
 {
-    Console.WriteLine("Veritabaný ve model oluþturmak istiyor musunuz (y/N)");
+    Console.WriteLine("Veritabanï¿½ ve model oluï¿½turmak istiyor musunuz (y/N)");
     string? test = Console.ReadLine();
     if (test == "y" || test == "Y")
     {
         using (var scope = app.Services.CreateScope())
         {
             var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-            dbContext.Database.EnsureDeleted(); // Veritabanýný siler
-            dbContext.Database.EnsureCreated(); // Veritabaný yoksa oluþturur
+            dbContext.Database.EnsureDeleted(); // Veritabanï¿½nï¿½ siler
+            dbContext.Database.EnsureCreated(); // Veritabanï¿½ yoksa oluï¿½turur
         }
         break; // Exit the loop if the database is created
     }
     else if (test == "" || test == "n" || test == "N")
     {
-        Console.WriteLine("Veritabaný ve model oluþturulmadý.");
+        Console.WriteLine("Veritabanï¿½ ve model oluï¿½turulmadï¿½.");
         break; // Exit the loop if the user chooses not to create the database
     }
     else
     {
-        Console.WriteLine("Geçersiz giriþ. Lütfen 'y' veya 'n' girin.");
+        Console.WriteLine("Geï¿½ersiz giriï¿½. Lï¿½tfen 'y' veya 'n' girin.");
     }
 }
 
@@ -48,6 +57,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowAllOrigins");
 
 app.UseAuthorization();
 
