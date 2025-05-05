@@ -41,6 +41,7 @@ namespace SafakBankAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
+            Console.WriteLine(user);
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 

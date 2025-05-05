@@ -36,26 +36,28 @@ export default function Register() {
       PhoneNumber: formData.phone,
     };
 
-    try {
-      const response = await axios.post(
-        "http://localhost:5290/api/user",
-        user,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+    console.log("Kullanıcı Modeli:", user);
 
-      if (response.status === 200 || response.status === 201) {
-        alert("Kayıt başarılı!");
-      } else {
-        alert("Kayıt sırasında bir hata oluştu.");
-      }
-    } catch (error) {
-      console.error("Hata:", error);
-      alert("Sunucuya bağlanılamadı.");
-    }
+    // try {
+    //   const response = await axios.post(
+    //     "http://localhost:5290/api/user",
+    //     user,
+    //     {
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //     }
+    //   );
+
+    //   if (response.status === 200 || response.status === 201) {
+    //     alert("Kayıt başarılı!");
+    //   } else {
+    //     alert("Kayıt sırasında bir hata oluştu.");
+    //   }
+    // } catch (error) {
+    //   console.error("Hata:", error);
+    //   alert("Sunucuya bağlanılamadı.");
+    // }
   };
 
   return (
@@ -87,7 +89,8 @@ export default function Register() {
           onChange={handleChange}
         />
         <input
-          type="email"
+          // type="email"
+          type="text"
           name="email"
           placeholder="E-posta"
           className="border border-gray-300 p-3 rounded-lg"

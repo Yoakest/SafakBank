@@ -26,15 +26,18 @@ var app = builder.Build();
 // Veritaban� ve model olu�turma i�lemi i�in gerekli kodlar
 while (true)
 {
-    Console.WriteLine("Veritaban� ve model olu�turmak istiyor musunuz (y/N)");
+    Console.WriteLine("Veritabanı ve model oluşturmak istiyor musunuz (y/N)");
     string? test = Console.ReadLine();
     if (test == "y" || test == "Y")
     {
         using (var scope = app.Services.CreateScope())
         {
             var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-            dbContext.Database.EnsureDeleted(); // Veritaban�n� siler
-            dbContext.Database.EnsureCreated(); // Veritaban� yoksa olu�turur
+
+
+            dbContext.Database.EnsureDeleted(); // Veritabanını siler
+
+            dbContext.Database.EnsureCreated(); // Veritabanı yoksa oluşturur
         }
         break; // Exit the loop if the database is created
     }
