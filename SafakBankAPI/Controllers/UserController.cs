@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using SafakBankAPI.Data;
 using SafakBankApi.Models;
+using SafakBankAPI.Helpers;
 
 namespace SafakBankAPI.Controllers
 {
@@ -10,10 +11,16 @@ namespace SafakBankAPI.Controllers
     public class UserController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly GenerateUserCode _generateUserCode;
+        private readonly EmailChecker _emailChecker;
 
-        public UserController(ApplicationDbContext context)
+        public UserController(ApplicationDbContext context,
+           GenerateUserCode generateUserCode,
+           EmailChecker emailChecker)
         {
             _context = context;
+            _generateUserCode = generateUserCode;
+            _emailChecker = emailChecker;
         }
 
         // GET: api/user Kullanıcıları listele
@@ -41,11 +48,25 @@ namespace SafakBankAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
-            Console.WriteLine(user);
             _context.Users.Add(user);
+            string hasedPass = PasswordHelper.HashPassword(user.Password);
+            user.Password = hasedPass;
+
+            bool isEmailUnique = await _emailChecker.IsEmailUnique(user.Email);
+
+            if (!isEmailUnique)
+            {
+                return BadRequest("ERRU16: Bu e-posta adresi zaten kayıtlı.");
+            }
+
+
+
+            user.UserCode = await _generateUserCode.Generate();
+
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetUser), new { id = user.Id }, new { user.Name, user.Surname });
+
         }
 
         // PUT: api/user/5 Kullanıcı güncelle

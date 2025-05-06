@@ -1,7 +1,11 @@
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 namespace SafakBankApi.Models
 {
+    [Index(nameof(UserCode), IsUnique = true, Name = "IX_User_UserCode")]
+    [Index(nameof(Email), IsUnique = true, Name = "IX_User_Email")]
+    [Index(nameof(PhoneNumber), IsUnique = true, Name = "IX_User_PhoneNumber")]
     public class User
     {
         [Key]
@@ -33,7 +37,9 @@ namespace SafakBankApi.Models
 
         [Required(ErrorMessage = "ERRU11: Doğum tarihi zorunludur.")]
         [DataType(DataType.Date, ErrorMessage = "ERRU12: Geçerli bir tarih giriniz.")]
-        public DateTime DateOfBirth { get; set; }
+        [Range(typeof(DateTime), "1896-1-1", "2025-12-31", ErrorMessage = "ERRU15: Doğum tarihi 1896 ile 2025 arasında olmalıdır.")]
+
+        public DateTime? DateOfBirth { get; set; }
 
         [StringLength(11, ErrorMessage = "ERRU13: TC Kimlik Numarası 11 karakter olmalıdır.")]
         public string? NationalityId { get; set; }

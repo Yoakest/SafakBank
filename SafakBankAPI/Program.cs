@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SafakBankAPI.Data;
+using SafakBankAPI.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,9 @@ builder.Services.AddCors(options =>
                           .AllowAnyMethod()
                           .AllowAnyHeader());
 });
+
+builder.Services.AddScoped<GenerateUserCode>(); // GenerateUserCode sınıfını DI konteynerine ekle
+builder.Services.AddScoped<EmailChecker>(); // EmailChecker sınıfını DI konteynerine ekle
 
 var app = builder.Build();
 

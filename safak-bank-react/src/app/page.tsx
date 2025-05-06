@@ -9,7 +9,8 @@ export default function Home() {
         alt="Safak Bank Logo"
         width={120}
         height={120}
-        className="mb-6"
+        priority={true}
+        className="mb-6" 
       />
 
       {/* Başlık */}
@@ -17,7 +18,7 @@ export default function Home() {
 
       {/* Açıklama */}
       <p className="text-lg text-gray-600 text-center mb-8">
-        Güvenilir ve hızlı bankacılık deneyimi için Şafak Bank'a hoş geldiniz.
+        Güvenilir ve hızlı bankacılık deneyimi için Şafak Bank&apos;a hoş geldiniz.
       </p>
 
       {/* Butonlar */}
