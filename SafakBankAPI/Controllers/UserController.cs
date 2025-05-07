@@ -4,6 +4,15 @@ using SafakBankAPI.Data;
 using SafakBankApi.Models;
 using SafakBankAPI.Helpers;
 
+// TODO Kullanıcı adı ve soyadı ile daha önce kullanıcı oluşturulmuş mu kontrolü yapılacak
+// TODO Kullanıcı Verileri şifreli olarak saklanacak
+// TODO şifre güvenliği kontrolü yapılacak (en az 8 karakter, büyük harf, küçük harf, rakam ve özel karakter içermeli)
+// TODO Kullanıcı silinemez
+// TODO E-Posta doğrulama yapılacak
+// TODO PhoneNumber doğrulama yapılacak
+
+
+
 namespace SafakBankAPI.Controllers
 {
     [Route("api/user")]
@@ -56,7 +65,7 @@ namespace SafakBankAPI.Controllers
 
             if (!isEmailUnique)
             {
-                return BadRequest("ERRU16: Bu e-posta adresi zaten kayıtlı.");
+                return BadRequest("ERRU15: Bu e-posta adresi zaten kayıtlı.");
             }
 
 
