@@ -41,6 +41,7 @@ namespace SafakBankApi.Models
 
         public DateTime? DateOfBirth { get; set; }
 
+        [Required(ErrorMessage = "ERRU16: TC Kimlik Numarası zorunludur.")]
         [StringLength(11, ErrorMessage = "ERRU13: TC Kimlik Numarası 11 karakter olmalıdır.")]
         public string? NationalityId { get; set; }
         public string? JobTitle { get; set; }

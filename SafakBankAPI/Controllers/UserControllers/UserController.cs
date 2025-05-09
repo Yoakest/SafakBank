@@ -13,7 +13,7 @@ using SafakBankAPI.Helpers;
 
 
 
-namespace SafakBankAPI.Controllers
+namespace SafakBankAPI.Controllers.UserControllers
 {
     [Route("api/user")]
     [ApiController]
@@ -137,14 +137,14 @@ namespace SafakBankAPI.Controllers
                 .Where(u => u.Id == id)
                 .Select(u => new
                 {
-                    Name = u.Name,
-                    Surname = u.Surname,
-                    Email = u.Email,
-                    PhoneNumber = u.PhoneNumber,
-                    Address = u.Address,
-                    JobTitle = u.JobTitle,
-                    Salary = u.Salary,
-                    EducationLevel = u.EducationLevel
+                    u.Name,
+                    u.Surname,
+                    u.Email,
+                    u.PhoneNumber,
+                    u.Address,
+                    u.JobTitle,
+                    u.Salary,
+                    u.EducationLevel
                 })
                 .FirstOrDefaultAsync();
 

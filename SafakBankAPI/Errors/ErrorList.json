@@ -1,0 +1,31 @@
+{
+  "User": {
+    "ERRU01": "Ad alanı zorunludur.",
+    "ERRU02": "Ad en az 2 ve en fazla 50 karakter olabilir.",
+    "ERRU03": "Soyad alanı zorunludur.",
+    "ERRU04": "Soyad en az 2 ve en fazla 50 karakter olabilir.",
+    "ERRU05": "E-posta alanı zorunludur.",
+    "ERRU06": "Geçerli bir e-posta adresi giriniz.",
+    "ERRU07": "şifre alanı zorunludur.",
+    "ERRU08": "şifre en az 6 ve en fazla 100 karakter olmalıdır.",
+    "ERRU09": "Geçerli bir telefon numarası giriniz.",
+    "ERRU10": "Adres en fazla 200 karakter olabilir.",
+    "ERRU11": "Doğum tarihi zorunludur.",
+    "ERRU12": "Geçerli bir tarih giriniz.",
+    "ERRU13": "TC Kimlik Numarası 11 karakter olmalıdır.",
+    "ERRU14": "Maaş negatif olamaz.",
+    "ERRU15": "Bu e-posta adresi zaten kayıtlı."
+  },
+  "UserLoginDTO": {
+    "ERRUL01": "Email giriniz.",
+    "ERRUL02": "Geçerli bir e-posta adresi giriniz.",
+    "ERRUL03": "Şifre giriniz.",
+    "ERRUL04": "Şifre en az 6 ve en fazla 100 karakter olmalıdır."
+  },
+  "CheckingAccount": {
+    "ERRCA01": "Hesap adı zorunludur.",
+    "ERRCA02": "Hesap adı en az 3 ve en fazla 50 karakter olabilir.",
+    "ERRCA03": "Hesap numarası zorunludur.",
+    "ERRCA04": "Hesap numarası 10 karakter olmalıdır."
+  }
+}

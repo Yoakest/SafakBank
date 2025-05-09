@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SafakBankApi.Models;
 using SafakBankAPI.Data;
 
-namespace SafakBankAPI.Controllers
+namespace SafakBankAPI.Controllers.CheckingAccountControllers
 {
     [Route("api/checking-account")]
     [ApiController]

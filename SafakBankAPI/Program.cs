@@ -25,6 +25,8 @@ builder.Services.AddCors(options =>
 builder.Services.AddScoped<GenerateUserCode>(); // GenerateUserCode sınıfını DI konteynerine ekle
 builder.Services.AddScoped<EmailChecker>(); // EmailChecker sınıfını DI konteynerine ekle
 
+builder.Services.AddSingleton<JwtHelper>();
+
 var app = builder.Build();
 
 // Veritaban� ve model olu�turma i�lemi i�in gerekli kodlar
